@@ -14,3 +14,5 @@
 2. Backend:
    - match the friends randomly
    - send an email with the instructions and the generated match
+   
+PS: New features will be added in the future
