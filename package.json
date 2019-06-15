@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Secret Santa",
   "main": "server.js",
-  "scripts": {},
+  "scripts": {
+    "prettier": "npm run prettier --single-quote '/utils/*.js'"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chingu-voyages/v9-solo-manu-4216.git"
@@ -18,5 +20,8 @@
   "dependencies": {
     "dotenv": "^8.0.0",
     "nodemailer": "^6.2.1"
+  },
+  "devDependencies": {
+    "prettier": "^1.18.2"
   }
 }
