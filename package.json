@@ -19,6 +19,7 @@
   "homepage": "https://github.com/chingu-voyages/v9-solo-manu-4216#readme",
   "dependencies": {
     "dotenv": "^8.0.0",
+    "express": "^4.17.1",
     "nodemailer": "^6.2.1"
   },
   "devDependencies": {
