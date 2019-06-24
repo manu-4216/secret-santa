@@ -1,5 +1,5 @@
 const nodeMailer = require('nodemailer');
-const emailTemplate = require('./emailTemplate');
+const emailTemplate = require('./templates/emailTemplate');
 
 const EMAIL_TYPE = 'oauth2';
 const { EMAIL_USER, EMAIL_CLIENT_ID, EMAIL_CLIENT_TOKEN, EMAIL_REFRESH_TOKEN } = process.env;
@@ -14,7 +14,7 @@ const auth = {
 
 let transporter;
 
-module.exports = ({ pairs, customMessage }) => {
+module.exports = ({ pairs, customMessage, callback }) => {
   transporter = nodeMailer.createTransport({
     service: 'gmail',
     auth: auth,
@@ -45,6 +45,7 @@ const sendEmail = ({ userEmail, userName, matchName, customMessage }) => {
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.log(error);
+      // callback(error);
     }
   });
 };

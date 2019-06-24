@@ -12,7 +12,8 @@ const swap = (arr, i, j) => {
 };
 
 module.exports = initialArr => {
-  arr = [...initialArr]; // copy the array, to avoid mutating it
+  arr = [...initialArr] // copy the array, to avoid mutating it
+    .filter(item => item.email !== ''); // and filter out the items with empty email
   pairs = [];
 
   const n = arr.length;

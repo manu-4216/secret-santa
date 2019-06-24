@@ -1,0 +1,23 @@
+service: secret-santa
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  stage: dev
+
+functions:
+  index:
+    handler: handler.index
+    events:
+      - http:
+          path: /
+          method: get
+          cors: true
+
+  handlePairCreation:
+    handler: handler.handlePairCreation
+    events:
+      - http:
+          path: form
+          method: post
+          cors: true
