@@ -1,5 +1,5 @@
 module.exports = `
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <title>Secret Santa</title>
@@ -132,7 +132,7 @@ module.exports = `
         <textarea
           id="textarea"
           rows="3"
-          placeholder="Optional custom message to your Santa friends (instructions, budget, etc)"
+          placeholder="Optional message to your Santa friends (instructions, budget, etc)"
           name="customMessage"
         ></textarea>
         <input id="submit-button" type="submit" value="Send" />
@@ -184,6 +184,9 @@ module.exports = `
             formData.customMessage = elem.value;
           }
         });
+        // Also pass the current URL of the webpage
+        formData.url = window.location.href;
+        console.log(formData);
 
         function emptyForm() {
           [...form.elements].forEach(elem => {
@@ -193,7 +196,6 @@ module.exports = `
           })
         }
 
-        console.log(formData);
 
         fetch(window.location.href + '/form', { method: 'POST', body: JSON.stringify(formData) })
           .then(function(response) {

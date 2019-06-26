@@ -1,5 +1,6 @@
 const nodeMailer = require('nodemailer');
 const emailTemplate = require('./templates/emailTemplate');
+require('dotenv').config();
 
 const EMAIL_TYPE = 'oauth2';
 const { EMAIL_USER, EMAIL_CLIENT_ID, EMAIL_CLIENT_TOKEN, EMAIL_REFRESH_TOKEN } = process.env;
@@ -14,7 +15,7 @@ const auth = {
 
 let transporter;
 
-module.exports = ({ pairs, customMessage, callback }) => {
+module.exports = ({ pairs, customMessage, url, callback }) => {
   transporter = nodeMailer.createTransport({
     service: 'gmail',
     auth: auth,
@@ -25,12 +26,13 @@ module.exports = ({ pairs, customMessage, callback }) => {
       userEmail: user.email,
       userName: user.name,
       matchName: match.name,
-      customMessage,
+      customMessage: customMessage,
+      url: url,
     });
   });
 };
 
-const sendEmail = ({ userEmail, userName, matchName, customMessage }) => {
+const sendEmail = ({ userEmail, userName, matchName, customMessage, url }) => {
   let mailOptions = {
     from: `Secret Santa <${EMAIL_USER}>`,
     to: userEmail,
@@ -39,6 +41,7 @@ const sendEmail = ({ userEmail, userName, matchName, customMessage }) => {
       name: userName,
       match: matchName,
       customMessage: customMessage,
+      url: url,
     }),
   };
 
@@ -47,5 +50,7 @@ const sendEmail = ({ userEmail, userName, matchName, customMessage }) => {
       console.log(error);
       // callback(error);
     }
+
+    console.log(info);
   });
 };
