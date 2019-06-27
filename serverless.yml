@@ -6,6 +6,14 @@ provider:
   stage: dev
 
 functions:
+  wishlist:
+    handler: handler.wishlist
+    events:
+      - http:
+          path: /wishlist/{id}
+          method: get
+          cors: true
+
   index:
     handler: handler.index
     events:
@@ -14,10 +22,18 @@ functions:
           method: get
           cors: true
 
+  handleWishlistSubmision:
+    handler: handler.handleWishlistSubmision
+    events:
+      - http:
+          path: /wishlist/{id}/form
+          method: post
+          cors: true
+
   handlePairCreation:
     handler: handler.handlePairCreation
     events:
       - http:
-          path: form
+          path: /form
           method: post
           cors: true

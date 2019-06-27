@@ -1,5 +1,5 @@
 require('dotenv').config();
-const sendEmails = require('./sendEmails');
+const { sendMatchEmails } = require('./sendEmails');
 const createRandomPairs = require('./createRandomPairs');
 const assert = require('assert');
 
@@ -18,15 +18,15 @@ const testFormData = {
     },
   ],
   customMessage: `ho ho ho`,
-  url: '',
+  url: 'google.com',
 };
 
 (async () => {
   try {
-    var answer = await sendEmails({
+    var answer = await sendMatchEmails({
       pairs: createRandomPairs(testFormData.people),
-      customMessage: '',
-      url: 'google.com',
+      customMessage: testFormData.customMessage,
+      url: testFormData.url,
     });
   } catch (error) {
     console.log(error);
