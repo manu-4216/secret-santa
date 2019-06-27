@@ -48,25 +48,20 @@ module.exports.wishlist = (event, context, callback) => {
 };
 
 module.exports.handleWishlistSubmision = (event, context, callback) => {
-  const { wishlist, id } = JSON.parse(event.body);
-  const { id2 } = JSON.parse(event.pathParameters);
+  const { wishlist, id, url } = JSON.parse(event.body);
 
   sendWishlistEmail({
     userEmail: decrypt(id),
     wishlist,
-    url: '', // TO DO: replace with real one
+    url,
   });
 
   const response = {
     statusCode: 200,
-    headers: {
-      'Content-Type': 'text/html',
-    },
-    body: {
+    body: JSON.stringify({
       wishlist,
       id,
-      id2,
-    },
+    }),
   };
 
   callback(null, response);

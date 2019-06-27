@@ -9,13 +9,13 @@ module.exports = ({ wishlist = [], url = '' }) => `
       <tr
         style="background-color: linen; font-size: 17px; color: rgb(0, 109, 106); width: 500px; padding: 0px; font-family: monospace;">
         <td colspan="2" style="padding: 10px 20px; font-family: monospace;">
-          <p style="font-size: 16px;">Hi again</p>
+          <p style="font-size: 16px;">Hi again,</p>
 
           <p style="color: rgb(0, 109, 106); font-size: 18px;">Your Secret Santa match updated their wish list ideas:</p>
 
           <p style="font-weight: bold;">${wishlist}</p>
 
-          <p style="color: rgb(0, 109, 106); padding-top: 14px;">
+          <p style="color: rgb(0, 109, 106); padding-top: 14px; font-size: 14px;">
             Don't forget you can edit your own wish list anytime, at the URL received in the first email.
           </p>
 

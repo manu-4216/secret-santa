@@ -127,8 +127,8 @@ module.exports = `
             return;
           }
         });
-        formData.id = window.location.href.split('/').splice(-1,1)[0]
-        console.log(formData);
+        formData.id = window.location.href.split('/').splice(-1,1)[0];
+        formData.url = window.location.href.split('/wishlist')[0];
 
         function emptyForm() {
           [...form.elements].forEach(elem => {

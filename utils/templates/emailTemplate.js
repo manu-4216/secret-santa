@@ -17,16 +17,16 @@ module.exports = ({ name = '', match = '', customMessage = '', url = '', wishlis
       <tr
         style="background-color: linen; font-size: 17px; color: rgb(0, 109, 106); width: 500px; padding: 0px; font-family: monospace;">
         <td colspan="2" style="padding: 10px 20px; font-family: monospace;">
-          <p style="font-size: 16px;">Hi ${name}</p>
+          <p style="font-size: 16px;">Hi ${name},</p>
 
           ${getCustomMessage(customMessage)}
 
           <p style="color: rgb(0, 109, 106); font-size: 18px; font-weight: bold;">Your Secret Santa match is <span style="font-weight: bold; color: crimson;">${match}</span>!</p>
 
-          <p style="color: rgb(0, 109, 106); padding-top: 15px;">
+          <p style="color: rgb(0, 109, 106); padding-top: 15px; font-size: 15px;">
             You can edit your wish list anytime at this unique URL:
-            <a href="${url}wishlist/${wishlistUrl}" style="color: rgb(0, 109, 106); display: block; text-decoration: underline; font-weight: bold; font-size: 13px;">
-              ${url}wishlist/${wishlistUrl}
+            <a href="${url}/wishlist/${wishlistUrl}" style="color: rgb(0, 109, 106); display: block; text-decoration: underline; font-weight: bold; font-size: 13px;">
+              ${url}/wishlist/${wishlistUrl}
             </a>
           </p>
 
