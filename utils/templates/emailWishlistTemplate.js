@@ -15,7 +15,7 @@ module.exports = ({ wishlist = [], url = '' }) => `
 
           <p style="font-weight: bold;">${wishlist}</p>
 
-          <p style="color: rgb(0, 109, 106); padding-top: 14px; font-size: 14px;">
+          <p style="color: rgb(0, 109, 106); padding-top: 15px; font-size: 14px;">
             Don't forget you can edit your own wish list anytime, at the URL received in the first email.
           </p>
 

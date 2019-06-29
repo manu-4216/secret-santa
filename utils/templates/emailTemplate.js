@@ -24,10 +24,7 @@ module.exports = ({ name = '', match = '', customMessage = '', url = '', wishlis
           <p style="color: rgb(0, 109, 106); font-size: 18px; font-weight: bold;">Your Secret Santa match is <span style="font-weight: bold; color: crimson;">${match}</span>!</p>
 
           <p style="color: rgb(0, 109, 106); padding-top: 15px; font-size: 15px;">
-            You can edit your wish list anytime at this unique URL:
-            <a href="${url}/wishlist/${wishlistUrl}" style="color: rgb(0, 109, 106); display: block; text-decoration: underline; font-weight: bold; font-size: 13px;">
-              ${url}/wishlist/${wishlistUrl}
-            </a>
+            You can edit your wish list anytime at this <a href="${url}/wishlist/${wishlistUrl}" style="color: rgb(0, 109, 106); text-decoration: underline; font-weight: bold; font-size: 13px;">unique URL</a>.
           </p>
 
           <p style="color: rgb(0, 109, 106); font-size: 15px; padding-top: 20px;">

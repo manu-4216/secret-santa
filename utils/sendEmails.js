@@ -37,7 +37,7 @@ const sendEmail = ({ userEmail, userName, matchName, customMessage, url, wishlis
   let mailOptions = {
     from: `Secret Santa <${EMAIL_USER}>`,
     to: userEmail,
-    subject: 'Discover your Secret Santa!',
+    subject: '🎅🏻Discover your Secret Santa!',
     html: emailTemplate({
       name: userName,
       match: matchName,
