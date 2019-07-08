@@ -111,8 +111,8 @@ module.exports = `
     <!-- This is used for rendering a template strings -->
     <div id="template-holder">
       <li class="users-item">
-        <input type="text" placeholder="name" name="name" autocomplete="off" />
-        <input type="email" placeholder="email" name="email" autocomplete="off" />
+        <input required type="text" placeholder="name" name="name" autocomplete="off" />
+        <input required type="email" placeholder="email" name="email" autocomplete="off" />
       </li>
     </div>
 
@@ -162,13 +162,14 @@ module.exports = `
       }
 
       function handleSubmit(event) {
-        event && event.preventDefault();
-
+        let hasError = false;
         const formData = {
           people: [],
           customMessage: '',
         };
         let n; // length
+
+        event && event.preventDefault();
 
         [...form.elements].forEach(elem => {
           n = formData.people.length;
@@ -187,7 +188,6 @@ module.exports = `
         });
         // Also pass the current URL of the webpage
         formData.url = window.location.href;
-        console.log(formData);
 
         function emptyForm() {
           [...form.elements].forEach(elem => {
@@ -200,9 +200,15 @@ module.exports = `
 
         fetch(window.location.href + '/form', { method: 'POST', body: JSON.stringify(formData) })
           .then(function(response) {
+            if (!response.ok) {
+              hasError = true;
+            }
             return response.json();
           })
           .then(function(myJson) {
+            if (hasError) {
+              throw Error(myJson.message);
+            }
             alert('Secret Santa emails have been sent succesfully!');
             emptyForm();
             console.log(myJson);
