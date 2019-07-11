@@ -4,6 +4,14 @@ module.exports = `
   <head>
     <title>Secret Santa</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:site_name" content="Secret Santa">
+    <meta property="og:title" content="Secret Santa">
+    <meta property="og:description" content="Create your own Secret Santa group">
+    <meta property="og:image" itemprop="image" content="https://raw.githubusercontent.com/manu-4216/resources/master/santa2.jpg">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://zbphsecmdb.execute-api.us-east-1.amazonaws.com/dev">
+
     <style>
       #template-holder {
         display: none;
