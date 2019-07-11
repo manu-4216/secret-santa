@@ -1,5 +1,12 @@
 # _Secret Santa_ project
 
+#### Table of Contents
+
+- [Description](#description)
+- [Tech](#tech)
+- [Features](#features)
+- [Screenshots](#screenshots)
+
 ## Description
 
 > **Secret Santa** is a Western Christmas tradition in which members of a group or community are randomly assigned a person to whom they give a gift. The identity of the gift giver is a secret not to be revealed until after the gift is opened.
@@ -21,7 +28,7 @@
    - match the friends randomly
    - send an email with the instructions and the generated match
 
-#### F2. Editing the wish list
+#### F2. Editing a wish list
 
 1. User UI:
 
@@ -29,5 +36,12 @@
 
 2. Backend:
    - also send to each user an unique URL where they can edit their wish list. This will encrypt the email of the match
-   - receive the form with the submited wish list
-   - decrypt the email of the match, and notify them by email of the wish list update
+   - decrypt the email from the unique URL, and notify by email of the wish list update
+
+## Screenshots
+
+- First email:
+  ![](/screenshot/first-email.png?raw=true)
+
+- Email for wishlist update:
+  ![](/screenshot/wishlist-email.png?raw=true)
