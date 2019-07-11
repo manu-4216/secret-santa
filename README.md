@@ -41,7 +41,7 @@
 ## Screenshots
 
 - First email:
-  ![](/screenshot/first-email.png?raw=true)
+  ![](/screenshots/first-email.png?raw=true)
 
 - Email for wishlist update:
-  ![](/screenshot/wishlist-email.png?raw=true)
+  ![](/screenshots/wishlist-email.png?raw=true)
