@@ -14,7 +14,7 @@
 ## Tech
 
 - AWS lambda, serverless
-- nodemon (for sending emails)
+- nodemailer (for sending emails)
 
 ## Features
 
