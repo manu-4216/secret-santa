@@ -1,17 +1,18 @@
 const { encrypt, decrypt } = require('./cryptr');
 const assert = require('assert');
 
-let encryptedWord;
-let decryptedWord;
+let encryptedWords;
+let decryptedWords;
 
 // Test with a simple word
-encryptedWord = encrypt('bacon');
-decryptedWord = decrypt(encryptedWord);
+encryptedWords = encrypt(['bacon', 'bread']);
+decryptedWords = decrypt(encryptedWords);
 
-assert.equal(decryptedWord, 'bacon');
+assert.equal(decryptedWords[0], 'bacon');
+assert.equal(decryptedWords[1], 'bread');
 
 // Another test with an email
-encryptedWord = encrypt('testemail77@gmail.com');
-decryptedWord = decrypt(encryptedWord);
+encryptedWords = encrypt(['testemail77@gmail.com']);
+decryptedWords = decrypt(encryptedWords);
 
-assert.equal(decryptedWord, 'testemail77@gmail.com');
+assert.equal(decryptedWords[0], 'testemail77@gmail.com');

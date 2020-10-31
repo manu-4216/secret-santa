@@ -28,16 +28,19 @@ const sendMatchEmails = ({ pairs, customMessage, url, callback }) => {
       matchName: match.name,
       customMessage: customMessage,
       url: url,
-      wishlistUrl: encrypt(match.email), // This will allow us to send an email to the match, without a DB
+      wishlistUrl: encrypt([match.email, match.name, user.name]), // This will allow us to send an email to the match, without a DB
     });
   });
 };
 
 const sendEmail = ({ userEmail, userName, matchName, customMessage, url, wishlistUrl }) => {
+  const todaysDate = new Date();
+  const year = todaysDate.getFullYear();
+
   let mailOptions = {
-    from: `Secret Santa <${EMAIL_USER}>`,
+    from: `🎅🏻 Secret Santa <${EMAIL_USER}>`,
     to: userEmail,
-    subject: '🎅🏻Discover your Secret Santa!',
+    subject: `For ${userName}: your ${year} Secret Santa match is ...`,
     html: emailTemplate({
       name: userName,
       match: matchName,
@@ -57,12 +60,17 @@ const sendEmail = ({ userEmail, userName, matchName, customMessage, url, wishlis
   });
 };
 
-const sendWishlistEmail = ({ userEmail, wishlist, url = '' }) => {
+const sendWishlistEmail = ({ userEmail, userName, matchName, wishlist, url = '' }) => {
+  const todaysDate = new Date();
+  const year = todaysDate.getFullYear();
+
   let mailOptions = {
-    from: `Secret Santa <${EMAIL_USER}>`,
+    from: `🎅🏻 Secret Santa <${EMAIL_USER}>`,
     to: userEmail,
-    subject: 'Your Secret Santa - Wishlist updated!',
+    subject: `For ${userName}: Your Secret Santa updated their Wishlist`,
     html: emailWishlistTemplate({
+      userName,
+      matchName,
       wishlist,
       url,
     }),

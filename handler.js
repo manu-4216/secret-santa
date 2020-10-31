@@ -49,9 +49,12 @@ module.exports.wishlist = (event, context, callback) => {
 
 module.exports.handleWishlistSubmision = (event, context, callback) => {
   const { wishlist, id, url } = JSON.parse(event.body);
+  const [userEmail, userName, matchName] = decrypt(id);
 
   sendWishlistEmail({
-    userEmail: decrypt(id),
+    userEmail,
+    userName,
+    matchName,
     wishlist,
     url,
   });

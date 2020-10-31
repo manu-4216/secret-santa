@@ -1,4 +1,4 @@
-module.exports = ({ wishlist = [], url = '' }) => `
+module.exports = ({ wishlist = [], userName, matchName, url = '' }) => `
   <table style="border-collapse: collapse;">
     <tbody>
       <tr
@@ -9,9 +9,9 @@ module.exports = ({ wishlist = [], url = '' }) => `
       <tr
         style="background-color: linen; font-size: 17px; color: rgb(0, 109, 106); width: 500px; padding: 0px; font-family: monospace;">
         <td colspan="2" style="padding: 10px 20px; font-family: monospace;">
-          <p style="font-size: 16px;">Hi again,</p>
+          <p style="font-size: 16px;">Hi again ${userName},</p>
 
-          <p style="color: rgb(0, 109, 106); font-size: 18px;">Your Secret Santa match updated their wish list ideas:</p>
+          <p style="color: rgb(0, 109, 106); font-size: 18px;">${matchName} updated their wish list ideas:</p>
 
           <p style="font-weight: bold;">${wishlist}</p>
 

@@ -4,6 +4,7 @@
   "description": "Secret Santa",
   "main": "server.js",
   "scripts": {
+    "load-env-vars": "export $(cat .env | xargs)",
     "deploy": "serverless deploy -v",
     "test-lambda:static": "serverless invoke -f index -l",
     "test-lambda:post": "serverless invoke -f handlePairCreation -l"

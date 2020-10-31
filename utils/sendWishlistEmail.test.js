@@ -9,6 +9,8 @@ const { TEST_EMAIL_ADDRESS1 } = process.env;
   try {
     var answer = await sendWishlistEmail({
       userEmail: TEST_EMAIL_ADDRESS1,
+      userName: 'Name',
+      matchName: 'Match',
       wishlist: ['item1', 'item2'],
     });
   } catch (error) {
